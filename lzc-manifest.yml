@@ -1,0 +1,18 @@
+application:
+  subdomain: picoclaw
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://picoclaw:18800/
+
+services:
+  picoclaw:
+    # sipeed/picoclaw:launcher
+    image: registry.lazycat.cloud/czyt/sipeed/picoclaw:fa25ea459a9e62b5
+    environment:
+      - PICOCLAW_GATEWAY_HOST=0.0.0.0
+      - TZ={{.U.timezone}}
+      - PICOCLAW_LAUNCHER_TOKEN={{.U.launcher_token}}
+    binds:
+      - /lzcapp/var/data:/root/.picoclaw

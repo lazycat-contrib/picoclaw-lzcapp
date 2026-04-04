@@ -1,0 +1,28 @@
+params:
+  - id: timezone
+    type: string
+    name: "Timezone"
+    description: "Server timezone, e.g. Asia/Shanghai, America/New_York, Europe/London"
+    default_value: "Asia/Shanghai"
+
+  - id: launcher_token
+    type: string
+    name: "Launcher Token"
+    description: "Access token for Web interface authentication"
+
+locales:
+  zh:
+    timezone:
+      name: "时区"
+      description: "服务器时区，例如：Asia/Shanghai（亚洲/上海）、America/New_York（美洲/纽约）、Europe/London（欧洲/伦敦）"
+
+    launcher_token:
+      name: "Web 访问令牌"
+      description: "用于 Web 界面身份验证的访问令牌"
+  en:
+    timezone:
+      name: "Timezone"
+      description: "Server timezone, e.g. Asia/Shanghai, America/New_York, Europe/London"
+    launcher_token:
+      name: "Web Access Token"
+      description: "Access token for Web interface authentication"
