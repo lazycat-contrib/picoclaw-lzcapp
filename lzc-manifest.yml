@@ -8,8 +8,8 @@ application:
 
 services:
   picoclaw:
-    # sipeed/picoclaw:launcher
-    image: registry.lazycat.cloud/czyt/sipeed/picoclaw:fa25ea459a9e62b5
+    #  ghcr.io/sipeed/picoclaw:v0.2.9-launcher
+    image: registry.lazycat.cloud/czyt/sipeed/picoclaw:0a08893d5eb840b7
     environment:
       - PICOCLAW_GATEWAY_HOST=0.0.0.0
       - TZ={{.U.timezone}}
