@@ -1,0 +1,40 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/picoclaw.lpk
+
+update:
+  strategy: publish
+  version_source:
+    type: image
+    image: picoclaw
+
+build:
+  run_buildscript: false
+
+images:
+  - id: picoclaw
+    target: service
+    service: picoclaw
+    source: ghcr.io/sipeed/picoclaw
+    channel: custom
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+-launcher$'
+    version_regex: '^v?(?P<version>\d+\.\d+\.\d+)-launcher$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: false
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: PicoClaw
+    summary: Published from GitHub Actions
