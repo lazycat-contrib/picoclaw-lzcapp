@@ -5,11 +5,11 @@ application:
   upstreams:
     - location: /
       backend: http://picoclaw:18800/
-
 services:
   picoclaw:
     #  ghcr.io/sipeed/picoclaw:v0.2.9-launcher
-    image: registry.lazycat.cloud/czyt/sipeed/picoclaw:0a08893d5eb840b7
+    # upstream: ghcr.io/sipeed/picoclaw:v0.3.1-launcher
+    image: registry.lazycat.cloud/czyt/sipeed/picoclaw:a2bc3ccac81b97ea
     environment:
       - PICOCLAW_GATEWAY_HOST=0.0.0.0
       - TZ={{.U.timezone}}
